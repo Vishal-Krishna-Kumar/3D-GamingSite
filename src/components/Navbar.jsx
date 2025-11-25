@@ -72,7 +72,7 @@ const NavBar = () => {
           {/* Logo and Product button */}
           <div className="flex items-center gap-7">
             {/* 🚨 FIX 1: Removed leading slash from img src */}
-            <img src="img/logo.png" alt="logo" className="w-10" /> 
+            <img src={import.meta.env.BASE_URL + "img/logo.png"} alt="logo" className="w-10" />
 
             <Button
               id="product-button"
@@ -104,7 +104,7 @@ const NavBar = () => {
                 ref={audioElementRef}
                 className="hidden"
                 // 🚨 FIX 2: Removed leading slash from audio src
-                src="audio/loop.mp3" 
+                src={import.meta.env.BASE_URL + "audio/loop.mp3"}
                 loop
               />
               {[1, 2, 3, 4].map((bar) => (

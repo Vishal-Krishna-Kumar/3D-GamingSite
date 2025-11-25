@@ -14,12 +14,12 @@ const Contact = () => {
         <div className="absolute -left-20 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-20 lg:w-96">
           <ImageClipBox
             // 🚨 FIX: Removed leading slash
-            src="img/contact-1.webp" 
+            src={import.meta.env.BASE_URL + "img/contact-1.webp"}
             clipClass="contact-clip-path-1"
           />
           <ImageClipBox
             // 🚨 FIX: Removed leading slash
-            src="img/contact-2.webp"
+            src={import.meta.env.BASE_URL + "img/contact-2.webp"}
             clipClass="contact-clip-path-2 lg:translate-y-40 translate-y-60"
           />
         </div>
@@ -27,12 +27,12 @@ const Contact = () => {
         <div className="absolute -top-40 left-20 w-60 sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
           <ImageClipBox
             // 🚨 FIX: Removed leading slash
-            src="img/swordman-partial.webp"
+            src={import.meta.env.BASE_URL + "img/swordman-partial.webp"}
             clipClass="absolute md:scale-125"
           />
           <ImageClipBox
             // 🚨 FIX: Removed leading slash
-            src="img/swordman.webp"
+            src={import.meta.env.BASE_URL + "img/swordman.webp"}
             clipClass="sword-man-clip-path md:scale-125"
           />
         </div>
