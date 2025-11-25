@@ -1,9 +1,13 @@
 import AnimatedTitle from "./AnimatedTitle";
 import Button from "./Button";
+import contact1 from '../assets/img/contact-1.webp';
+import contact2 from '../assets/img/contact-2.webp';
+import swordmanPartial from '../assets/img/swordman-partial.webp';
+import swordman from '../assets/img/swordman.webp';
 
 const ImageClipBox = ({ src, clipClass }) => (
   <div className={clipClass}>
-    <img src={src} />
+    <img src={src} alt="Contact visual" />
   </div>
 );
 
@@ -13,26 +17,22 @@ const Contact = () => {
       <div className="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
         <div className="absolute -left-20 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-20 lg:w-96">
           <ImageClipBox
-            // 🚨 FIX: Removed leading slash
-            src={import.meta.env.BASE_URL + "img/contact-1.webp"}
+            src={contact1}
             clipClass="contact-clip-path-1"
           />
           <ImageClipBox
-            // 🚨 FIX: Removed leading slash
-            src={import.meta.env.BASE_URL + "img/contact-2.webp"}
+            src={contact2}
             clipClass="contact-clip-path-2 lg:translate-y-40 translate-y-60"
           />
         </div>
 
         <div className="absolute -top-40 left-20 w-60 sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
           <ImageClipBox
-            // 🚨 FIX: Removed leading slash
-            src={import.meta.env.BASE_URL + "img/swordman-partial.webp"}
+            src={swordmanPartial}
             clipClass="absolute md:scale-125"
           />
           <ImageClipBox
-            // 🚨 FIX: Removed leading slash
-            src={import.meta.env.BASE_URL + "img/swordman.webp"}
+            src={swordman}
             clipClass="sword-man-clip-path md:scale-125"
           />
         </div>

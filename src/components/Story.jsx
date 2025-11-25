@@ -3,6 +3,7 @@ import { useRef } from "react";
 
 import Button from "./Button";
 import AnimatedTitle from "./AnimatedTitle";
+import entranceImg from '../assets/img/entrance.webp';
 
 const FloatingImage = () => {
   const frameRef = useRef(null);
@@ -67,15 +68,13 @@ const FloatingImage = () => {
                   onMouseLeave={handleMouseLeave}
                   onMouseUp={handleMouseLeave}
                   onMouseEnter={handleMouseLeave}
-                  // 🚨 FIX: Removed leading slash
-                  src={import.meta.env.BASE_URL + "img/entrance.webp"}
-                  alt="entrance.webp"
+                  src={entranceImg}
+                  alt="Entrance to hidden realm"
                   className="object-contain"
                 />
               </div>
             </div>
 
-            {/* for the rounded corner */}
             <svg
               className="invisible absolute size-0"
               xmlns="http://www.w3.org/2000/svg"

@@ -7,12 +7,18 @@ import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import VideoPreview from "./VideoPreview";
 
+// Import all video and audio files properly
+import hero1Video from '../assets/videos/hero-1.mp4';
+import hero2Video from '../assets/videos/hero-2.mp4';
+import hero3Video from '../assets/videos/hero-3.mp4';
+import hero4Video from '../assets/videos/hero-4.mp4';
+import loopAudio from '../assets/audio/loop.mp3';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
-
   const [loading, setLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
@@ -31,7 +37,6 @@ const Hero = () => {
 
   const handleMiniVdClick = () => {
     setHasClicked(true);
-
     setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
   };
 
@@ -80,9 +85,17 @@ const Hero = () => {
     });
   });
 
-  // 🚨 CORRECTED PATH: Removed the leading slash to make it relative.
-  // Notice the backticks ` ` around the string
-  const getVideoSrc = (index) => import.meta.env.BASE_URL + `videos/hero-${index}.mp4`;
+  // FIXED: Use imported videos instead of dynamic paths
+  const getVideoSrc = (index) => {
+    switch(index) {
+      case 1: return hero1Video;
+      case 2: return hero2Video;
+      case 3: return hero3Video;
+      case 4: return hero4Video;
+      default: return hero1Video;
+    }
+  };
+
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
       {loading && (
@@ -168,6 +181,9 @@ const Hero = () => {
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
         G<b>A</b>MING
       </h1>
+
+      {/* Add audio element if needed */}
+      <audio src={loopAudio} loop autoPlay />
     </div>
   );
 };

@@ -6,6 +6,10 @@ import { TiLocationArrow } from "react-icons/ti";
 
 import Button from "./Button";
 
+// Import logo and audio files properly
+import logo from '../assets/img/logo.png';
+import loopAudio from '../assets/audio/loop.mp3';
+
 const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
 
 const NavBar = () => {
@@ -71,8 +75,8 @@ const NavBar = () => {
         <nav className="flex size-full items-center justify-between p-4">
           {/* Logo and Product button */}
           <div className="flex items-center gap-7">
-            {/* 🚨 FIX 1: Removed leading slash from img src */}
-            <img src={import.meta.env.BASE_URL + "img/logo.png"} alt="logo" className="w-10" />
+            {/* FIXED: Using imported logo */}
+            <img src={logo} alt="logo" className="w-10" />
 
             <Button
               id="product-button"
@@ -103,8 +107,8 @@ const NavBar = () => {
               <audio
                 ref={audioElementRef}
                 className="hidden"
-                // 🚨 FIX 2: Removed leading slash from audio src
-                src={import.meta.env.BASE_URL + "audio/loop.mp3"}
+                // FIXED: Using imported audio
+                src={loopAudio}
                 loop
               />
               {[1, 2, 3, 4].map((bar) => (
