@@ -80,6 +80,7 @@ const Hero = () => {
     });
   });
 
+  // 🚨 CORRECTED PATH: Removed the leading slash to make it relative.
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
   return (
