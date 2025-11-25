@@ -81,8 +81,8 @@ const Hero = () => {
   });
 
   // 🚨 CORRECTED PATH: Removed the leading slash to make it relative.
-  const getVideoSrc = (index) => import.meta.env.BASE_URL + 'videos/hero-${index}.mp4'; 
-
+  // Notice the backticks ` ` around the string
+  const getVideoSrc = (index) => import.meta.env.BASE_URL + `videos/hero-${index}.mp4`;
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
       {loading && (
